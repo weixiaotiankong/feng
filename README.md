@@ -1,45 +1,50 @@
-# 项目仓库
+# feng
 
-> 这是一个由 WorkBuddy 初始化并链接到 GitHub 的项目仓库。
+> 司法鉴定资料与脚本 · 电子书管理项目
 
 ## 简介
 
-（请在此补充项目的实际说明：背景、目标、技术栈等。）
+本仓库用于归集两类内容：
 
-当前仓库已包含以下基础设施：
+1. **司法鉴定资料与脚本** —— 伤残鉴定等标准的条款研读、参考资料与辅助处理脚本。
+2. **电子书管理** —— 批量采集、整理与重命名的工具脚本。
+   - 基于 Python（`requests` + `BeautifulSoup`）多线程抓取；
+   - 采集到的电子书统一按真实书名命名、本地归档。
+   - 实际电子书文件保存在本地，**不纳入本仓库**；本仓库只放脚本、索引与配置。
 
-- `.gitignore` —— 忽略本地状态、依赖、密钥等不应入库的文件
-- `LICENSE` —— 开源许可证（默认 MIT，可按需修改）
-- `.github/workflows/ci.yml` —— GitHub Actions 持续集成流程
+> 说明：当前为初始化骨架，具体的脚本与资料目录将逐步补充。
 
-## 目录结构
+## 目录结构（建议）
 
 ```
-.
-├── .github/
-│   └── workflows/
-│       └── ci.yml        # 自动构建 / 校验流程
-├── .gitignore            # 忽略规则
-├── LICENSE               # 许可证
-└── README.md             # 本文件
+feng/
+├── scripts/            # Python 工具脚本（电子书抓取、重命名等）
+├── references/         # 司法鉴定参考资料、条款研读笔记
+├── docs/               # 文档与说明
+├── .github/workflows/  # CI（见下）
+├── .gitignore
+├── LICENSE
+└── README.md
 ```
 
-## 本地开发
+## 环境要求
+
+- Python 3.13+
+- 依赖见 `requirements.txt`（如 `requests`、`beautifulsoup4`）
+
+## 本地使用
 
 ```bash
-# 克隆（首次）
-git clone <你的仓库地址>
-cd <仓库目录>
+# 安装依赖
+pip install -r requirements.txt
 
-# 日常提交
-git add .
-git commit -m "描述你的改动"
-git push origin main
+# 运行示例脚本（文件名按实际调整）
+python scripts/xxx.py
 ```
 
-## CI
+## 自动化（CI）
 
-推送到 `main` 分支或发起 Pull Request 时，GitHub Actions 会自动：
+每次 push / PR 到 `main` 时，GitHub Actions 会：
 
 1. 检出代码
 2. 安装 Python 3.13
@@ -49,4 +54,4 @@ git push origin main
 
 ## 许可证
 
-见 [LICENSE](./LICENSE)（MIT）。
+[MIT](./LICENSE)

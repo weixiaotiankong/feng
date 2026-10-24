@@ -1,0 +1,38 @@
+# ===== WorkBuddy 本地状态（不入库）=====
+# .workbuddy 存放本机项目记忆、技能与配置等本地状态，不属于源码，不应提交到远程仓库。
+.workbuddy/
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# 依赖与密钥
+requirements.lock
+.env
+.env.*
+*.log
+
+# ===== 操作系统 / 编辑器 =====
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*~
+
+# ===== Node（如需）=====
+node_modules/
